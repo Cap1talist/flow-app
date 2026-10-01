@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flow VPN — Privacy Policy</title>
+<style>
+:root { color-scheme: light dark; --text: #1c1c1e; --muted: #6b6b70; --bg: #ffffff; --line: #d9d9de;
+  --soft: #f4f4f6; --link: #0a5fd6; --mark: #fff2a8; }
+@media (prefers-color-scheme: dark) {
+  :root { --text: #f2f2f7; --muted: #a0a0a8; --bg: #111113; --line: #37373c; --soft: #1c1c1f; --link: #6cacff;
+    --mark: #6b5a00; }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+main { max-width: 760px; margin: 0 auto; padding: 24px 16px 48px; overflow-wrap: break-word; }
+nav.langs { font-size: 15px; color: var(--muted); padding-top: 12px; }
+nav.langs a { margin-right: 14px; }
+section + section { margin-top: 48px; border-top: 1px solid var(--line); }
+h1 { font-size: 28px; line-height: 1.2; margin: 28px 0 12px; }
+@media (max-width: 359px) { h1 { font-size: 24px; } }
+h2 { font-size: 21px; line-height: 1.3; margin: 32px 0 10px; }
+p, ul { margin: 0 0 14px; }
+ul { padding-left: 22px; }
+li { margin-bottom: 8px; }
+a { color: var(--link); }
+code { font: 0.9em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: var(--soft);
+  padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+.table { overflow-x: auto; margin: 0 0 14px; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; }
+th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+th { background: var(--soft); }
+mark { background: var(--mark); color: inherit; }
+footer { margin-top: 40px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 14px;
+  color: var(--muted); }
+footer a { margin-right: 14px; }
+.draft { background: var(--mark); padding: 10px 12px; border-radius: 8px; font-size: 15px; }
+</style>
+</head>
+<body>
+<main>
+<section id="en" lang="en">
+<nav class="langs"><a href="#en" lang="en">English</a> <a href="#ru" lang="ru">Русский</a></nav>
+<h1>Flow Privacy Policy</h1>
+<p>Effective date: October 1, 2026</p>
+<h2>1. Who we are and what Flow is</h2>
+<p>Flow for iPhone (the “app”) is a VPN client. It connects to VPN servers using a subscription link or a server link that you got from your provider, and supports the VLESS, VMess, Trojan, Shadowsocks and Hysteria2 protocols. The app is published by NALITEK, OOO, a company registered in the Russian Federation (OGRN 1177746852030), 30A Bolshaya Gruzinskaya St., bldg. 1, Moscow, 123056, Russia (“we”, “us”).</p>
+<p>The app contains no servers of ours, no account and no purchases. We never ask for your name, email, phone number or password. <strong>We receive no data about you through the app:</strong> it sends nothing to us, and it has no analytics, no ads and no trackers.</p>
+<p><strong>Your subscription provider</strong> is the service or person that gave you the subscription link or the server link and runs the servers behind it. You choose the provider yourself when you add a link. The app sends the data described in sections 3 and 4 only to that provider — to the address in your link. How the provider uses that data and how long it keeps it is governed by the provider’s own privacy policy. This policy describes only what the app itself does.</p>
+<h2>2. In short</h2>
+<ul>
+<li>Flow is a client: it connects to servers whose link you added yourself. We receive no data about you through the app.</li>
+<li>The app sends the subscription provider you chose your subscription key, a random device identifier, your iPhone model, your iOS version and the app version — so the provider’s server recognizes your subscription, the device shows up in it and the device limit works. Like any server on the internet, the provider’s server also sees the IP address the request comes from (sections 3 and 4).</li>
+<li>Your subscription links, servers, settings and error log are stored only on your iPhone.</li>
+<li>The app keeps no traffic logs: it does not record which websites you visit and does not store the contents of your traffic.</li>
+<li>The app does not ask for access to your contacts, location, camera or microphone.</li>
+<li>We do not sell your data or share it with third parties.</li>
+</ul>
+<h2>3. What the app sends to your subscription provider</h2>
+<p>The app loads your subscription from the address in your subscription link — over HTTPS only. The server receives your subscription key as part of that address; the app adds the rest to the request:</p>
+<div class="table"><table>
+<tr><th>Data</th><th>Example</th><th>Why</th></tr>
+<tr><td>subscription key — the identifier of your subscription, issued to you by the provider</td><td>part of your subscription link</td><td>so the server can find your subscription and send its servers</td></tr>
+<tr><td>random device identifier</td><td><code>3f1c9a2e-…</code></td><td>so the provider can tell your devices apart: list this device among your subscription’s devices and enforce the device limit</td></tr>
+<tr><td>iPhone model</td><td><code>iPhone16,1</code></td><td>so the device can be recognized in the subscription’s device list</td></tr>
+<tr><td>operating system and its version</td><td><code>iOS</code>, <code>17.5.1</code></td><td>same as above</td></tr>
+<tr><td>app version</td><td><code>Flow/0.1.0</code> in the User-Agent header</td><td>so the server returns settings in a format this version of the app understands</td></tr>
+</table></div>
+<p><strong>The device identifier</strong> is created by the app itself the first time it loads a subscription. It is a random number (UUID); it is not derived from your hardware and is not shared with other apps. It is not the advertising identifier (IDFA) or the identifier for vendor, and the app never asks for permission to track you. The identifier is stored in the iOS Keychain on this iPhone only, so that reinstalling the app on this iPhone does not take up a second device slot in your subscription. It does not move to another iPhone — neither from a backup nor when you transfer data from your old iPhone: on a new iPhone the app creates a new identifier. Every provider whose subscription you add on this iPhone receives the same identifier.</p>
+<p><strong>When this data is sent:</strong> when you add a subscription (never before the app has shown the “What data we use” screen); when you refresh the subscription manually; when you open the app, return to it or switch to another subscription, if more time has passed since its last refresh than the interval set by the provider; and in the background if “Refresh automatically” is on (iOS decides exactly when background refreshes run).</p>
+<p><strong>Link to your subscription.</strong> The provider’s server uses your subscription key to identify your subscription and can associate the device with it. The app sends the data in the table only to make the subscription work — never for tracking, advertising or analytics.</p>
+<p><strong>IP address.</strong> Like any server on the internet, the provider’s server sees the IP address a request comes from. An IP address can reveal an approximate location — a country or a city. The app itself does not determine your location and does not ask for access to location services. Whether the provider stores IP addresses and how it uses them is governed by the provider’s policy.</p>
+<p>In response, the server sends the list of servers and information about your subscription: its name, expiry date, traffic used and limit, refresh interval and a support link.</p>
+<p><strong>A link to a single server</strong> (<code>vless://…</code>, <code>vmess://…</code>, <code>trojan://…</code>, <code>ss://…</code>, <code>hysteria2://…</code>). No subscription is loaded in this case and none of the data in the table is sent anywhere: the server from the link is added to the list on your iPhone.</p>
+<h2>4. While the VPN is on</h2>
+<p>Your iPhone’s traffic travels to the VPN server you selected — from your subscription or from a server link you added. Whether and how that traffic is encrypted depends on the server’s protocol and settings: they are set by your subscription provider, and the app applies them as given. Each time you connect, the app sends that server the key from its settings (it came with the subscription or with the server link); the server uses it to recognize a subscriber. To deliver your traffic, the VPN server processes technical connection data — your IP address and the destination addresses. These servers are run by your subscription provider; whether the provider keeps logs and what they contain is governed by the provider’s policy, and the app has no control over that.</p>
+<p><strong>The app itself keeps no traffic logs.</strong> The VPN core inside the app runs with its access log turned off: the websites you visit, destination addresses, DNS queries and the contents of your traffic are not logged and are not sent anywhere except the selected VPN server. The one exception is the VPN core’s temporary error log: when a connection fails, an address may be written to it; it is never shown or sent and is emptied as described in section 5.</p>
+<p><strong>Traffic amount.</strong> The counters on the home screen (how much was received and sent during the current connection) are calculated on your iPhone and are not sent anywhere. The subscription’s traffic amount (“Used …” on the subscription screen) is counted by the provider’s server and reported to the app together with the subscription.</p>
+<p><strong>DNS.</strong> While the VPN is on, website names are resolved by the public DNS servers of Cloudflare (1.1.1.1) and Google (8.8.8.8). Queries reach them through the VPN server, so they see its address, not yours.</p>
+<p><strong>The “.ru sites go direct” setting</strong> (on by default). Connections to websites in the .ru, .su and .рф domains and to addresses from the rules sent by your subscription provider go directly, outside the VPN: those websites see your usual IP address, and the VPN server does not receive that traffic. Connections to devices on your local network (router, printer) always go directly.</p>
+<h2>5. What stays only on your iPhone</h2>
+<ul>
+<li>subscription links, server lists with their connection settings, and the selected server;</li>
+<li>subscription information from the provider’s server: name, expiry date, traffic, time of the last refresh;</li>
+<li>app settings: “.ru sites go direct”, “No VPN — no internet”, “Connect automatically”, “Refresh automatically”, theme, language, and a flag that the “What data we use” screen has been shown;</li>
+<li>the error log — technical messages from the VPN core and the app. Server addresses, domain names, IP addresses, identifiers and links in it are replaced with placeholders. It holds up to 256 KB; older entries are removed;</li>
+<li>a temporary technical log of the VPN core inside the VPN extension. It may contain addresses; it is never shown or sent, and it is emptied every time the VPN starts or stops and whenever it reaches 256 KB;</li>
+<li>the random device identifier (in the Keychain, on this iPhone only) and the VPN configuration that iOS shows in Settings → VPN.</li>
+</ul>
+<p>The app does not send this data to us or to anyone else, except for what it cannot work without (sections 3 and 4): the subscription is loaded from the address in its link together with the device identifier, and the VPN connects to the selected server using that server’s settings. The error log leaves your iPhone only if you copy it yourself (“Copy”) and send it to someone. Like other apps’ data, your subscription links, servers, settings and error log are included in your iPhone backup (iCloud or computer) if you have backups turned on; we have no access to it. The device identifier does not move to another iPhone with a backup (section 3).</p>
+<h2>6. What the app does not collect</h2>
+<ul>
+<li>the websites and apps you use, destination addresses, DNS queries, the contents of your traffic, your browsing or search history;</li>
+<li>contacts, photos, videos or audio — the app does not ask for access to them, the camera or the microphone;</li>
+<li>location data — the app does not ask for access to location services (for IP addresses, see section 3);</li>
+<li>the advertising identifier (IDFA) or the identifier for vendor; the app does not track you across other companies’ apps and websites;</li>
+<li>your name, email, phone number or payment details — the app has no account and no purchases.</li>
+</ul>
+<p>The app has no ads, no analytics and no trackers. The only third-party library is the open-source Xray VPN core (via libXray). It runs on your iPhone, collects nothing for its authors and sends only your traffic and the key from that server’s settings (section 4) — to the selected VPN server.</p>
+<h2>7. Third parties and other connections the app makes</h2>
+<p>We do not sell, rent, use or share the data of the app’s users with third parties — and we do not receive it: the app sends nothing to us (section 1). The app sends data only where you directed it yourself: to your subscription provider (section 3) and to the selected VPN server (section 4).</p>
+<p>When the app contacts anything else:</p>
+<ul>
+<li><strong>Servers → Measure while the VPN is on.</strong> To measure latency, the app sends an empty request (HEAD) through the VPN to the public connectivity-check address <code>cp.cloudflare.com</code>. It contains no data about you except the standard technical headers of iOS (the app’s name and build number, the system version); Cloudflare sees the VPN server’s address, not yours. While the VPN is off, Measure only opens and immediately closes TCP connections to the servers in the list — no data is sent.</li>
+<li><strong>Redirects.</strong> If the subscription server redirects the request to another HTTPS address, the subscription key and the device data from section 3 go to that address. The app does not follow redirects to insecure (HTTP) addresses.</li>
+<li><strong>Support.</strong> Opens, in your browser, the address provided by your subscription provider; that page’s own terms apply there.</li>
+<li><strong>Privacy Policy.</strong> Opens this page in your browser.</li>
+<li><strong>Apple.</strong> If you turned on Share With App Developers in iOS (Privacy &amp; Security → Analytics &amp; Improvements) or send feedback in TestFlight, Apple provides us with crash reports, feedback and aggregated statistics under its own rules (<a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a>). The app has no crash reporting of its own.</li>
+</ul>
+<h2>8. How to delete your data</h2>
+<p><strong>On your iPhone</strong>, data is kept until you delete it:</p>
+<ul>
+<li><strong>Subscription → Delete subscription</strong> removes that subscription’s link, its servers and its settings files from your iPhone. App settings, manually added servers and the error log remain.</li>
+<li><strong>Settings → About → Error log → Clear</strong> clears the error log.</li>
+<li><strong>Deleting the app</strong> removes all of its data from your iPhone except the device identifier: iOS may keep it in the Keychain, and after reinstalling on the same iPhone, the app will use the same identifier. It is removed together with all other data when you erase your iPhone (Settings → General → Transfer or Reset iPhone → Erase All Content and Settings), and it never moves to another iPhone.</li>
+</ul>
+<p><strong>With your subscription provider.</strong> Deleting a subscription or the app does not delete the device record held by the provider — the app sends no such command. How long the provider keeps the data described in sections 3 and 4 and how to delete it is governed by the provider’s policy: to remove the device from your subscription or to delete data about you, contact your subscription provider.</p>
+<p><strong>With us.</strong> We receive no data about you through the app, so there is nothing of that kind for us to provide or delete. If you email us at the address in section 12 or send feedback through TestFlight, we receive your email address and whatever you send (your message, the error log, screenshots) and use it only to reply to you and fix the problem; we will delete this correspondence at your request sent to the same address. If the law of your country gives you rights to access, correct or delete your data, please address requests about the data described in sections 3 and 4 to your subscription provider. We will answer questions about the app and this policy at the address in section 12.</p>
+<h2>9. Security</h2>
+<p>The app loads subscriptions over HTTPS only and does not follow redirects to insecure addresses, so the subscription key and the device identifier are never sent in plain text. Protection of VPN traffic is determined by the selected server’s protocol and settings (section 4). The device identifier is stored in the Keychain on this iPhone only. Server addresses and the subscription link are never written to iOS system logs or to the error log.</p>
+<h2>10. Children</h2>
+<p>The app is not intended for children under 13. We do not collect children’s data — just as we do not collect the data of any other user of the app. The technical data described in section 3 is the same for every user and goes to the subscription provider, not to us.</p>
+<h2>11. Changes to this policy</h2>
+<p>We publish each new version on this page with a new effective date. If the data the app sends changes, we will also update the “What data we use” screen in the app (Settings → About → Privacy).</p>
+<h2>12. Contact</h2>
+<ul>
+<li>Questions about the app and this policy: <a href="mailto:support@nalitek.com">support@nalitek.com</a></li>
+<li>Publisher: NALITEK, OOO, 30A Bolshaya Gruzinskaya St., bldg. 1, Moscow, 123056, Russia</li>
+</ul>
+<footer><a href="../#en">Support</a> <a href="../privacy/#en">Privacy Policy</a> <span>© 2026 NALITEK, OOO</span></footer>
+</section>
+<section id="ru" lang="ru">
+<nav class="langs"><a href="#en" lang="en">English</a> <a href="#ru" lang="ru">Русский</a></nav>
+<h1>Политика конфиденциальности приложения Flow</h1>
+<p>Дата вступления в силу: 1 октября 2026 г.</p>
+<h2>1. Кто мы и что такое Flow</h2>
+<p>Flow для iPhone (далее — «приложение») — VPN-клиент. Он подключается к VPN-серверам по ссылке подписки или по ссылке на сервер, которую вы получили у своего поставщика, и поддерживает протоколы VLESS, VMess, Trojan, Shadowsocks и Hysteria2. Издатель приложения — ООО «НАЛИТЕК» (NALITEK, OOO), Российская Федерация, ОГРН 1177746852030, адрес: 123056, г. Москва, ул. Большая Грузинская, д. 30А, стр. 1 (далее — «мы»).</p>
+<p>В приложении нет наших серверов, учётной записи и покупок. Мы не спрашиваем имя, e-mail, телефон или пароль. <strong>Через приложение мы не получаем данных о вас:</strong> оно ничего не отправляет нам, в нём нет аналитики, рекламы и трекеров.</p>
+<p><strong>Поставщик подписки</strong> — сервис или человек, который выдал вам ссылку подписки или ссылку на сервер и управляет серверами из неё. Вы выбираете его сами, когда добавляете ссылку. Данные из разделов 3 и 4 приложение передаёт только ему — по адресу из вашей ссылки. Как он использует эти данные и сколько их хранит, определяет его политика конфиденциальности. Эта политика описывает только то, что делает само приложение.</p>
+<h2>2. Коротко</h2>
+<ul>
+<li>Flow — клиент: он подключается к серверам, ссылку на которые вы добавили сами. Через приложение мы данных о вас не получаем.</li>
+<li>Поставщику подписки, которого вы выбрали, приложение передаёт ключ подписки, случайный идентификатор устройства, модель iPhone, версию iOS и версию приложения — чтобы его сервер узнал вашу подписку, устройство было видно в ней и работал лимит устройств. Как любой сервер в интернете, сервер поставщика видит и IP-адрес, с которого пришёл запрос (разделы 3 и 4).</li>
+<li>Ссылки подписок, серверы, настройки и журнал ошибок хранятся только на вашем iPhone.</li>
+<li>Приложение не ведёт журнал трафика: не записывает, какие сайты вы посещаете, и не сохраняет содержимое трафика.</li>
+<li>Приложение не запрашивает доступ к контактам, геолокации, камере и микрофону.</li>
+<li>Мы не продаём ваши данные и не передаём их третьим лицам.</li>
+</ul>
+<h2>3. Что приложение передаёт поставщику подписки</h2>
+<p>Приложение загружает подписку по адресу вашей ссылки подписки — только по защищённому протоколу https. Ключ подписки сервер получает в самом адресе, остальное приложение прикладывает к запросу:</p>
+<div class="table"><table>
+<tr><th>Данные</th><th>Пример</th><th>Зачем</th></tr>
+<tr><td>ключ подписки — идентификатор вашей подписки, который выдал вам поставщик</td><td>часть вашей ссылки подписки</td><td>чтобы сервер нашёл вашу подписку и прислал её серверы</td></tr>
+<tr><td>случайный идентификатор устройства</td><td><code>3f1c9a2e-…</code></td><td>чтобы поставщик отличал ваши устройства: показывал это устройство в списке устройств подписки и соблюдал лимит устройств</td></tr>
+<tr><td>модель iPhone</td><td><code>iPhone16,1</code></td><td>чтобы устройство можно было узнать в списке устройств подписки</td></tr>
+<tr><td>операционная система и её версия</td><td><code>iOS</code>, <code>17.5.1</code></td><td>то же</td></tr>
+<tr><td>версия приложения</td><td><code>Flow/0.1.0</code> в заголовке User-Agent</td><td>чтобы сервер отдавал настройки в формате, который понимает эта версия приложения</td></tr>
+</table></div>
+<p><strong>Идентификатор устройства</strong> приложение создаёт само, при первой загрузке подписки. Это случайное число (UUID), оно не вычисляется из оборудования и не связано с другими приложениями. Это не рекламный идентификатор (IDFA) и не идентификатор производителя; разрешение на отслеживание приложение не запрашивает. Идентификатор хранится в связке ключей iOS (Keychain) только на этом iPhone — чтобы после переустановки приложения на этом iPhone устройство не заняло в подписке второе место. На другой iPhone идентификатор не переносится — ни из резервной копии, ни при переносе данных со старого iPhone: на новом iPhone приложение создаст новый идентификатор. Один и тот же идентификатор получают все поставщики, чьи подписки вы добавили на этом iPhone.</p>
+<p><strong>Когда данные уходят:</strong> при добавлении подписки (не раньше, чем приложение покажет экран «Какие данные мы используем»); когда вы обновляете подписку вручную; при открытии приложения, при возврате в него и при переключении на другую подписку, если с её последнего обновления прошло больше интервала, который задаёт поставщик; в фоне, если включено «Обновлять автоматически» (момент фонового обновления выбирает iOS).</p>
+<p><strong>Связь с подпиской.</strong> По ключу подписки сервер поставщика определяет вашу подписку и может связать с ней устройство. Приложение передаёт данные из таблицы только для того, чтобы подписка работала, — не для отслеживания, рекламы или аналитики.</p>
+<p><strong>IP-адрес.</strong> Как любой сервер в интернете, сервер поставщика подписки видит IP-адрес, с которого пришёл запрос. По IP-адресу можно определить примерное местоположение — страну или город. Само приложение местоположение не определяет и доступ к геолокации не запрашивает. Хранит ли поставщик IP-адреса и как их использует, определяет его политика.</p>
+<p>В ответ сервер присылает список серверов и сведения о подписке: название, срок действия, использованный объём трафика и лимит, интервал обновления, ссылку на поддержку.</p>
+<p><strong>Ссылка на отдельный сервер</strong> (<code>vless://…</code>, <code>vmess://…</code>, <code>trojan://…</code>, <code>ss://…</code>, <code>hysteria2://…</code>). Подписка при этом не загружается, и данные из таблицы никуда не передаются: сервер из ссылки добавляется в список на вашем iPhone.</p>
+<h2>4. Когда VPN включён</h2>
+<p>Трафик вашего iPhone идёт на VPN-сервер, который вы выбрали, — из вашей подписки или из добавленной вами ссылки на сервер. Шифруется ли трафик и как, зависит от протокола и настроек этого сервера: их задаёт поставщик подписки, приложение применяет их как есть. При каждом подключении приложение передаёт этому серверу ключ из его настроек (он пришёл в подписке или в ссылке на сервер): по нему сервер узнаёт подписчика. Чтобы доставить трафик, VPN-сервер обрабатывает технические данные соединения — ваш IP-адрес и адреса назначения. Этими серверами управляет поставщик подписки; ведёт ли он журналы и что в них записывает, определяет его политика, приложение этого не контролирует.</p>
+<p><strong>Само приложение журнал трафика не ведёт.</strong> VPN-ядро внутри приложения работает с выключенным журналом доступа: посещённые сайты, адреса назначения, DNS-запросы и содержимое трафика приложение не записывает и никуда, кроме выбранного VPN-сервера, не передаёт. Исключение — временный журнал ошибок VPN-ядра: при сбое соединения в него может попасть адрес; он не показывается, не отправляется и обнуляется (раздел 5).</p>
+<p><strong>Объём трафика.</strong> Счётчики на главном экране (сколько принято и отправлено за текущее подключение) считаются на iPhone и никуда не отправляются. Объём трафика подписки («Использовано …» на экране подписки) считает сервер поставщика и сообщает приложению вместе с подпиской.</p>
+<p><strong>DNS.</strong> При включённом VPN имена сайтов разрешают общедоступные DNS-серверы Cloudflare (1.1.1.1) и Google (8.8.8.8). Запросы к ним идут через VPN-сервер, поэтому они видят его адрес, а не ваш.</p>
+<p><strong>Настройка «Российские сайты напрямую»</strong> (по умолчанию включена). Соединения с сайтами в доменах .ru, .su, .рф и с адресами из правил, которые прислал поставщик подписки, идут напрямую, мимо VPN: эти сайты видят ваш обычный IP-адрес, а VPN-сервер такой трафик не получает. Соединения с устройствами вашей локальной сети (роутер, принтер) всегда идут напрямую.</p>
+<h2>5. Что хранится только на вашем iPhone</h2>
+<ul>
+<li>ссылки подписок, списки серверов с их настройками подключения, выбранный сервер;</li>
+<li>сведения о подписке от сервера поставщика: название, срок действия, объём трафика, время последнего обновления;</li>
+<li>настройки приложения: «Российские сайты напрямую», «Без VPN — без интернета», «Подключать автоматически», «Обновлять автоматически», тема, язык, отметка, что экран «Какие данные мы используем» уже показан;</li>
+<li>журнал ошибок — технические сообщения VPN-ядра и приложения. Адреса серверов, домены, IP-адреса, идентификаторы и ссылки в нём заменяются метками. Размер — до 256 КБ, старые записи удаляются;</li>
+<li>временный технический журнал VPN-ядра внутри VPN-расширения. В нём могут быть адреса; он не показывается и не отправляется, обнуляется при каждом включении и выключении VPN и по достижении 256 КБ;</li>
+<li>случайный идентификатор устройства (в Keychain, только на этом iPhone) и конфигурация VPN, которую iOS показывает в «Настройки → VPN».</li>
+</ul>
+<p>Приложение не отправляет эти данные ни нам, ни кому-либо ещё, кроме того, без чего оно не работает (разделы 3 и 4): подписка загружается по адресу из её ссылки вместе с идентификатором устройства, а VPN подключается к выбранному серверу с его настройками. Журнал ошибок покидает iPhone, только если вы сами скопируете его («Копировать») и отправите кому-нибудь. Ссылки подписок, серверы, настройки и журнал ошибок, как и данные других приложений, попадают в резервную копию iPhone (iCloud или компьютер), если она у вас включена; доступа к ней у нас нет. Идентификатор устройства с резервной копией на другой iPhone не переносится (раздел 3).</p>
+<h2>6. Чего приложение не собирает</h2>
+<ul>
+<li>посещённые сайты и приложения, адреса назначения, DNS-запросы, содержимое трафика, историю браузера и поиска;</li>
+<li>контакты, фото, видео, звук — приложение не запрашивает доступ к ним, к камере и микрофону;</li>
+<li>данные геолокации — приложение не запрашивает доступ к службам геолокации (об IP-адресе — раздел 3);</li>
+<li>рекламный идентификатор (IDFA) и идентификатор производителя; приложение не отслеживает вас в приложениях и на сайтах других компаний;</li>
+<li>имя, e-mail, телефон, платёжные данные — в приложении нет учётной записи и покупок.</li>
+</ul>
+<p>В приложении нет рекламы, аналитики и трекеров. Единственная сторонняя библиотека — открытое VPN-ядро Xray (через libXray). Оно работает на iPhone, ничего не собирает для своих авторов и передаёт на выбранный VPN-сервер только ваш трафик и ключ из настроек этого сервера (раздел 4).</p>
+<h2>7. Третьи лица и другие обращения приложения</h2>
+<p>Мы не продаём, не сдаём в аренду, не используем и не передаём третьим лицам данные пользователей приложения — и не получаем их: приложение ничего не отправляет нам (раздел 1). Приложение передаёт данные только туда, куда вы направили его сами: поставщику подписки (раздел 3) и на выбранный VPN-сервер (раздел 4).</p>
+<p>Когда приложение обращается куда-то ещё:</p>
+<ul>
+<li><strong>«Серверы → Измерить» при включённом VPN.</strong> Чтобы измерить задержку, приложение отправляет через VPN пустой запрос (HEAD) на общедоступный адрес проверки связи <code>cp.cloudflare.com</code>. Данных о вас в нём нет, кроме стандартных технических заголовков iOS (название и номер сборки приложения, версия системы); Cloudflare видит адрес VPN-сервера, а не ваш. При выключенном VPN «Измерить» только открывает и сразу закрывает TCP-соединение с серверами из списка — данные не передаются.</li>
+<li><strong>Переадресация.</strong> Если сервер подписки переадресует запрос на другой https-адрес, ключ подписки и данные устройства из раздела 3 уходят по этому адресу. На незащищённые адреса (http) приложение не переходит.</li>
+<li><strong>«Поддержка».</strong> Открывает в браузере адрес, который указал поставщик подписки; на этой странице действуют её правила.</li>
+<li><strong>«Политика конфиденциальности».</strong> Открывает эту страницу в браузере.</li>
+<li><strong>Apple.</strong> Если вы разрешили в настройках iOS («Конфиденциальность и безопасность → Аналитика и улучшения») делиться данными с разработчиками приложений или отправляете отзыв в TestFlight, Apple передаёт нам отчёты о сбоях, отзывы и обобщённую статистику по своим правилам (<a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a>). Своего сбора отчётов в приложении нет.</li>
+</ul>
+<h2>8. Как удалить данные</h2>
+<p><strong>На вашем iPhone</strong> данные хранятся, пока вы их не удалите:</p>
+<ul>
+<li><strong>«Подписка → Удалить подписку»</strong> удаляет с iPhone ссылку этой подписки, её серверы и файлы настроек. Настройки приложения, серверы, добавленные вручную, и журнал ошибок остаются.</li>
+<li><strong>«Настройки → О приложении → Журнал ошибок → Очистить»</strong> очищает журнал ошибок.</li>
+<li><strong>Удаление приложения</strong> удаляет с iPhone все его данные, кроме идентификатора устройства: iOS может сохранить его в Keychain, и после переустановки на этом же iPhone приложение возьмёт тот же идентификатор. Он удаляется вместе со всеми данными при стирании iPhone («Настройки → Основные → Перенос или сброс iPhone → Стереть контент и настройки») и на другой iPhone не переносится.</li>
+</ul>
+<p><strong>У поставщика подписки.</strong> Удаление подписки или приложения не удаляет запись об устройстве у поставщика — приложение не отправляет такой команды. Сколько поставщик хранит данные из разделов 3 и 4 и как их удалить, определяет его политика: чтобы удалить устройство из подписки или данные о себе, обратитесь к поставщику подписки.</p>
+<p><strong>У нас.</strong> Через приложение мы данных о вас не получаем, поэтому по ним нам нечего выдать или удалить. Если вы сами напишете нам по адресу из раздела 12 или отправите отзыв через TestFlight, мы получим ваш адрес электронной почты и то, что вы прислали (текст, журнал ошибок, снимки экрана), и используем это только чтобы ответить вам и исправить ошибку; по вашей просьбе на тот же адрес мы удалим эту переписку. Если закон вашей страны даёт вам права на доступ к данным, их исправление или удаление, по данным из разделов 3 и 4 обращайтесь к поставщику подписки. На вопросы о приложении и этой политике мы ответим по адресу из раздела 12.</p>
+<h2>9. Безопасность</h2>
+<p>Приложение загружает подписку только по https и не переходит по переадресации на незащищённые адреса — ключ подписки и идентификатор устройства не передаются открытым текстом. Защита VPN-трафика определяется протоколом и настройками выбранного сервера (раздел 4). Идентификатор устройства хранится в Keychain только на этом iPhone. Адреса серверов и ссылка подписки не записываются ни в системные журналы iOS, ни в журнал ошибок.</p>
+<h2>10. Дети</h2>
+<p>Приложение не предназначено для детей младше 13 лет. Мы не собираем данные детей — как и данные остальных пользователей приложения. Технические данные из раздела 3 одинаковы для любого пользователя и уходят поставщику подписки, а не нам.</p>
+<h2>11. Изменения политики</h2>
+<p>Новую редакцию мы публикуем на этой странице с новой датой вступления в силу. Если изменится состав данных, которые передаёт приложение, мы изменим и экран «Какие данные мы используем» в приложении («Настройки → О приложении → Конфиденциальность»).</p>
+<h2>12. Контакты</h2>
+<ul>
+<li>Вопросы о приложении и этой политике: <a href="mailto:support@nalitek.com">support@nalitek.com</a></li>
+<li>Издатель: ООО «НАЛИТЕК» (NALITEK, OOO), 123056, г. Москва, ул. Большая Грузинская, д. 30А, стр. 1</li>
+</ul>
+<footer><a href="../#ru">Поддержка</a> <a href="../privacy/#ru">Политика конфиденциальности</a> <span>© 2026 NALITEK, OOO</span></footer>
+</section>
+</main>
+<script>if (!location.hash && /^ru/i.test(navigator.language || '')) { location.replace('#ru'); }</script>
+</body>
+</html>
