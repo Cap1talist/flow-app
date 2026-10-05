@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Flow VPN — Support</title>
+<title>Flow VPN Client — Support</title>
 <style>
 :root { color-scheme: light dark; --text: #1c1c1e; --muted: #6b6b70; --bg: #ffffff; --line: #d9d9de;
   --soft: #f4f4f6; --link: #0a5fd6; --mark: #fff2a8; }
@@ -43,17 +43,53 @@ footer a { margin-right: 14px; }
 <main>
 <section id="en" lang="en">
 <nav class="langs"><a href="#en" lang="en">English</a> <a href="#ru" lang="ru">Русский</a></nav>
-<h1>Flow VPN — Support</h1>
-<p>Flow is a VPN client for iPhone. It connects to VPN servers using a subscription link or a server link from a provider of your choice, and supports the VLESS, VMess, Trojan, Shadowsocks and Hysteria2 protocols. The app has no servers of its own, no account and no purchases.</p>
+<h1>Flow VPN Client — Support</h1>
+<p>Flow is a VPN client for iPhone. It connects to VPN servers using a subscription link, a server link or a server configuration from a provider of your choice, and supports the VLESS, VMess, Trojan, Shadowsocks, Hysteria2 and AmneziaWG protocols. The app has no servers of its own, no account and no purchases.</p>
 <h2>Contact us</h2>
 <p>Questions about the app: <a href="mailto:support@nalitek.com">support@nalitek.com</a>. We reply in English and Russian.</p>
 <h2>Before you write</h2>
 <ul>
-<li><strong>The subscription does not load or has ended.</strong> Subscriptions and servers come from your subscription provider — whoever gave you the link. Please contact them: we have no access to subscriptions or servers. To check whether the subscription has changed, tap “Refresh now” on the subscription screen — or “Check again” if the home screen says “Subscription expired”.</li>
-<li><strong>The VPN does not connect.</strong> Choose another server: tap “Server” on the home screen, or “Try another server” on the error screen.</li>
+<li><strong>The subscription does not load or has ended.</strong> Subscriptions and servers come from your subscription provider — whoever gave you the link. Please contact them: we have no access to subscriptions or servers. To check whether the subscription has changed, tap “Refresh now” on the “Profiles” screen (it is below the profile list when the active profile is a subscription) — or “Check again” if the home screen says “Subscription expired”. If you have another profile, switch to it with the “Profiles” button.</li>
+<li><strong>The VPN does not connect.</strong> Choose another server: tap “Server” on the home screen, or “Try another server” on the error screen. The error screen also has a “Profiles” button: choose another profile or delete the one that does not work.</li>
 <li><strong>Send us the error log.</strong> Settings → About → Error log → Copy, then paste the text into your email. The log contains no server addresses and no subscription link — they are replaced with placeholders.</li>
 <li><strong>Tell us the app version:</strong> Settings → About → Version, plus your iPhone model and iOS version.</li>
 </ul>
+<h2>Profiles</h2>
+<p>Each subscription and each server you added on its own — with a link or a configuration — is a profile. One profile is active: the VPN connects to its server. The list of profiles is on the “Profiles” screen: tap “Profile” on the home screen.</p>
+<ul>
+<li><strong>How to add one.</strong> On the “Profiles” screen tap “Add profile”. Paste a subscription link or a server link into the field and tap “Save”. To add a server configuration, tap “Paste from clipboard” or “Import configuration file”. The new profile becomes active at once; if the VPN is on, the connection moves to its server.</li>
+<li><strong>From another app.</strong> A configuration file (.conf) can be shared to Flow from Files, Mail or a messenger: open the Share sheet and choose Flow. The server is added as a new profile, and the app shows “Servers added: 1”. No connection is started, and if you already had profiles, the active one stays the same — choose the new profile in the list. At first launch, the server is added after you tap “Understood” on the “What data we use” screen.</li>
+<li><strong>How to switch.</strong> Tap a profile in the list — the active one has a check mark. If the VPN is on, the connection moves to that profile’s server; you do not need to turn the VPN off. The profile also changes when you pick a server of another profile on the “Servers” screen.</li>
+<li><strong>How to delete one.</strong> Tap the trash icon in the profile’s row and confirm with “Delete profile”. The profile is removed from this iPhone: a subscription together with its servers, a server together with its keys. Deleting the active profile while the VPN is on turns the VPN off.</li>
+<li><strong>“Subscription expired”.</strong> The home screen looks like this only when the active profile’s subscription has ended. Your other profiles are not affected: tap “Profiles” and choose another one. In the profile list, such a subscription has “expired” under its name.</li>
+</ul>
+<h2>AmneziaWG servers</h2>
+<p>An AmneziaWG server is added from a configuration — a text or a file issued by your provider. No camera is needed for this.</p>
+<ul>
+<li><strong>From the clipboard.</strong> Copy the whole configuration text and tap “Paste from clipboard”.</li>
+<li><strong>From a file.</strong> Tap “Import configuration file” and pick the file in the Files window.</li>
+<li><strong>Where the buttons are.</strong> On the “Subscription link” screen at first launch, and in the “Add profile” window: tap “Profile” on the home screen, then “Add profile”.</li>
+<li><strong>With the Share sheet.</strong> A configuration file can be shared to Flow from another app — see “Profiles” above.</li>
+<li><strong>What happens next.</strong> The server becomes a profile of its own. On the “Servers” screen it is in the “Added manually” section, with the caption “AmneziaWG” under its name. Configuration text cannot be pasted into the link field: use the buttons.</li>
+</ul>
+<h2>If the configuration was not added</h2>
+<p>The app shows one of these messages:</p>
+<ul>
+<li><strong>“This configuration isn’t supported”.</strong> The configuration has a parameter or a value that this version of the app does not accept. Contact the provider that issued it.</li>
+<li><strong>“The configuration is damaged or incomplete”.</strong> The text was not copied in full or was changed: a required line is missing, or a key or an address is written incorrectly. Copy the whole configuration again, or import the file.</li>
+<li><strong>“Too large to be a server configuration”.</strong> The text or the file is larger than 64 KB — it is not a server configuration.</li>
+<li><strong>“This file doesn’t contain a server configuration”.</strong> A different file was picked or shared: it is empty, it is not text, or it has no configuration in it. Server links cannot be added from a file — paste them into the link field.</li>
+<li><strong>“Couldn’t read the file”.</strong> The file did not open. Pick or share it again.</li>
+<li><strong>“To add a server configuration, tap “Paste from clipboard” or import a file”.</strong> Configuration text ended up in the link field. The field is cleared; add the configuration with a button.</li>
+</ul>
+<h2>How an AmneziaWG server differs from the others</h2>
+<ul>
+<li><strong>The “.ru sites go direct” switch is inactive.</strong> It is the first switch in the “Connection” section of Settings. While an AmneziaWG server is selected, it cannot be toggled: what goes through the VPN is set by the server’s configuration. The setting keeps its value and applies again when a server of another protocol is selected.</li>
+<li><strong>Measure shows “—”.</strong> While the VPN is off, the latency of an AmneziaWG server is not measured. While the VPN is on, it is measured only if the server’s configuration routes all internet addresses (IPv4 and IPv6) through the VPN; otherwise “—” stays.</li>
+<li><strong>The server stopped responding.</strong> The VPN does not turn itself off. The app does not notice it at once: the status stays “Connected” for up to a few minutes, and if the configuration has no PersistentKeepalive line — until the network changes or the iPhone wakes up. Then the home screen shows “Connecting”, and the app keeps retrying until the server responds. Connections that go through the VPN do not work all this time. To leave this state, tap the circle on the home screen — the VPN disconnects. Then choose another server or contact the provider that issued the configuration.</li>
+</ul>
+<h2>Licenses</h2>
+<p>The main open-source components of the app and their licenses: Settings → About → Licenses.</p>
 <h2>Privacy</h2>
 <p>What data the app uses and where it goes is described in the <a href="privacy/#en">Privacy Policy</a>.</p>
 <p>App publisher: NALITEK, OOO.</p>
@@ -61,17 +97,53 @@ footer a { margin-right: 14px; }
 </section>
 <section id="ru" lang="ru">
 <nav class="langs"><a href="#en" lang="en">English</a> <a href="#ru" lang="ru">Русский</a></nav>
-<h1>Flow VPN — поддержка</h1>
-<p>Flow — VPN-клиент для iPhone. Он подключается к VPN-серверам по ссылке подписки или по ссылке на сервер от поставщика, которого вы выбрали сами, и поддерживает протоколы VLESS, VMess, Trojan, Shadowsocks и Hysteria2. В приложении нет своих серверов, учётной записи и покупок.</p>
+<h1>Flow VPN Client — поддержка</h1>
+<p>Flow — VPN-клиент для iPhone. Он подключается к VPN-серверам по ссылке подписки, по ссылке на сервер или по конфигурации сервера от поставщика, которого вы выбрали сами, и поддерживает протоколы VLESS, VMess, Trojan, Shadowsocks, Hysteria2 и AmneziaWG. В приложении нет своих серверов, учётной записи и покупок.</p>
 <h2>Связаться с нами</h2>
 <p>Вопросы о приложении: <a href="mailto:support@nalitek.com">support@nalitek.com</a>. Отвечаем на русском и английском.</p>
 <h2>Прежде чем писать</h2>
 <ul>
-<li><strong>Подписка не загружается или закончилась.</strong> Подписку и серверы выдаёт поставщик подписки — тот, кто дал вам ссылку. Обратитесь к нему: у нас нет доступа к подпискам и серверам. Проверить, не изменилась ли подписка, можно кнопкой «Обновить сейчас» на экране подписки, а если на главном экране написано «Подписка закончилась» — кнопкой «Проверить снова».</li>
-<li><strong>VPN не подключается.</strong> Выберите другой сервер: на главном экране нажмите «Сервер» или на экране ошибки — «Попробовать другой сервер».</li>
+<li><strong>Подписка не загружается или закончилась.</strong> Подписку и серверы выдаёт поставщик подписки — тот, кто дал вам ссылку. Обратитесь к нему: у нас нет доступа к подпискам и серверам. Проверить, не изменилась ли подписка, можно кнопкой «Обновить сейчас» на экране «Профили» (она под списком профилей, когда активный профиль — подписка), а если на главном экране написано «Подписка закончилась» — кнопкой «Проверить снова». Если у вас есть другой профиль, перейдите на него кнопкой «Профили».</li>
+<li><strong>VPN не подключается.</strong> Выберите другой сервер: на главном экране нажмите «Сервер» или на экране ошибки — «Попробовать другой сервер». На экране ошибки есть и кнопка «Профили»: выберите другой профиль или удалите тот, что не работает.</li>
 <li><strong>Пришлите журнал ошибок.</strong> «Настройки → О приложении → Журнал ошибок → Копировать» — и вставьте текст в письмо. Адресов серверов и ссылки подписки в журнале нет: их заменяют метки.</li>
 <li><strong>Укажите версию приложения:</strong> «Настройки → О приложении → Версия», а также модель iPhone и версию iOS.</li>
 </ul>
+<h2>Профили</h2>
+<p>Каждая подписка и каждый сервер, который вы добавили отдельно — ссылкой или конфигурацией, — это профиль. Активен один профиль: к его серверу подключается VPN. Список профилей — на экране «Профили»: на главном экране нажмите «Профиль».</p>
+<ul>
+<li><strong>Как добавить.</strong> На экране «Профили» нажмите «Добавить профиль». Ссылку подписки или ссылку на сервер вставьте в поле и нажмите «Сохранить». Конфигурацию сервера добавьте кнопкой «Вставить из буфера» или «Импортировать файл конфигурации». Добавленный профиль сразу становится активным; если VPN включён, подключение переходит на его сервер.</li>
+<li><strong>Из другого приложения.</strong> Файл конфигурации (.conf) можно передать в Flow из «Файлов», почты или мессенджера: откройте «Поделиться» и выберите Flow. Сервер добавится новым профилем, приложение покажет «Добавлено серверов: 1». Подключение при этом не начинается, а если профили уже были, активным остаётся прежний — выберите новый профиль в списке. При первом запуске сервер добавится после того, как вы нажмёте «Понятно» на экране «Какие данные мы используем».</li>
+<li><strong>Как переключиться.</strong> Нажмите на профиль в списке — у активного стоит галочка. Если VPN включён, подключение переходит на сервер этого профиля, выключать VPN не нужно. Профиль меняется и тогда, когда вы выбираете сервер другого профиля на экране «Серверы».</li>
+<li><strong>Как удалить.</strong> Нажмите значок корзины в строке профиля и подтвердите кнопкой «Удалить профиль». Профиль удаляется с этого iPhone: подписка — вместе со своими серверами, сервер — вместе со своими ключами. Если удалить активный профиль при включённом VPN, VPN отключится.</li>
+<li><strong>«Подписка закончилась».</strong> Так главный экран выглядит, только когда закончилась подписка активного профиля. Другим профилям это не мешает: нажмите «Профили» и выберите другой. В списке профилей под названием такой подписки написано «закончилась».</li>
+</ul>
+<h2>Сервер AmneziaWG</h2>
+<p>Сервер AmneziaWG добавляется из конфигурации — текста или файла, который выдал ваш поставщик. Камера для этого не нужна.</p>
+<ul>
+<li><strong>Из буфера обмена.</strong> Скопируйте текст конфигурации целиком и нажмите «Вставить из буфера».</li>
+<li><strong>Из файла.</strong> Нажмите «Импортировать файл конфигурации» и выберите файл в окне «Файлы».</li>
+<li><strong>Где эти кнопки.</strong> На экране «Ссылка подписки» при первом запуске и в окне «Добавить профиль»: на главном экране нажмите «Профиль», затем «Добавить профиль».</li>
+<li><strong>Через «Поделиться».</strong> Файл конфигурации можно передать в Flow из другого приложения — раздел «Профили» выше.</li>
+<li><strong>Что будет дальше.</strong> Сервер становится отдельным профилем. На экране «Серверы» он стоит в разделе «Добавлены вручную», под его именем — подпись «AmneziaWG». В поле для ссылки текст конфигурации не вставляется: пользуйтесь кнопками.</li>
+</ul>
+<h2>Если конфигурация не добавилась</h2>
+<p>Приложение покажет одну из фраз:</p>
+<ul>
+<li><strong>«Эта конфигурация не поддерживается».</strong> В конфигурации есть параметр или значение, которые эта версия приложения не принимает. Обратитесь к поставщику, который её выдал.</li>
+<li><strong>«Конфигурация повреждена или неполная».</strong> Текст скопирован не целиком или изменён: не хватает обязательной строки, либо ключ или адрес записан с ошибкой. Скопируйте конфигурацию заново, целиком, или импортируйте файл.</li>
+<li><strong>«Слишком большой размер для конфигурации сервера».</strong> Текст или файл больше 64 КБ — это не конфигурация сервера.</li>
+<li><strong>«В файле нет конфигурации сервера».</strong> Выбран или передан другой файл: он пуст, это не текст или в нём нет конфигурации. Ссылки на серверы файлом не добавляются — вставьте их в поле для ссылки.</li>
+<li><strong>«Не удалось прочитать файл».</strong> Файл не открылся. Выберите или передайте его ещё раз.</li>
+<li><strong>«Чтобы добавить конфигурацию сервера, нажмите «Вставить из буфера» или импортируйте файл».</strong> Текст конфигурации оказался в поле для ссылки. Поле очищается; добавьте конфигурацию кнопкой.</li>
+</ul>
+<h2>Чем сервер AmneziaWG отличается от остальных</h2>
+<ul>
+<li><strong>Переключатель, который направляет часть сайтов напрямую, неактивен.</strong> Это первый переключатель в разделе «Подключение» настроек. Пока выбран сервер AmneziaWG, он не нажимается: что идёт через VPN, задаёт конфигурация сервера. Значение настройки сохраняется и снова действует, когда выбран сервер другого протокола.</li>
+<li><strong>«Измерить» показывает «—».</strong> При выключенном VPN задержка сервера AmneziaWG не измеряется. При включённом VPN она измеряется, только если конфигурация сервера направляет через VPN все адреса интернета (IPv4 и IPv6); иначе остаётся «—».</li>
+<li><strong>Сервер перестал отвечать.</strong> VPN при этом сам не выключается. Приложение замечает это не сразу: до нескольких минут статус остаётся «Подключено», а если в конфигурации нет строки PersistentKeepalive — до смены сети или пробуждения iPhone. Затем статус — «Подключаемся», и приложение повторяет попытки, пока сервер не ответит. Соединения, которые идут через VPN, всё это время не работают. Чтобы выйти, нажмите на знак на главном экране — VPN отключится. Затем выберите другой сервер или обратитесь к поставщику, который выдал конфигурацию.</li>
+</ul>
+<h2>Лицензии</h2>
+<p>Основные открытые компоненты приложения и их лицензии: «Настройки → О приложении → Лицензии».</p>
 <h2>Конфиденциальность</h2>
 <p>Какие данные использует приложение и кому они уходят — в <a href="privacy/#ru">Политике конфиденциальности</a>.</p>
 <p>Издатель приложения: ООО «НАЛИТЕК» (NALITEK, OOO).</p>
